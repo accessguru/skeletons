@@ -1,0 +1,42 @@
+﻿@using Syncfusion.Blazor.Notifications
+@inherits SkeletonComponentLayoutBase
+@{
+    if (IsBusy)
+    {
+        <div class="container-fluid min-vh-100 d-flex flex-column">
+            <div class="row">
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+                <div class="col">
+                    <SkeletonInputControl/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col justify-content-end d-flex">
+                    <SkeletonButton/>
+                    <SkeletonButton CssClass="ms-2"/>
+                </div>
+            </div>
+            <div class="row flex-grow-1">
+                <div class="col pb-2 pt-3">
+                    <SkeletonGrid/>
+                </div>
+            </div>
+        </div>
+    }
+}

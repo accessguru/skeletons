@@ -1,0 +1,79 @@
+﻿@page "/home"
+@inherits LayoutComponentBase
+@layout EmptyLayout
+@using Syncfusion.Blazor.Notifications
+
+<div>
+    <div class="header d-flex align-items-center">
+        <div class="flex-grow-1 d-flex align-items-center">
+            <SfSkeleton Shape="SkeletonType.Rectangle" Width="14px" Height="16px" CssClass="ms-3"/>
+            <SfSkeleton Shape="SkeletonType.Rectangle" Width="400px" Height="22px" CssClass="ms-3"/>
+        </div>
+        <div class="me-3">
+            <div class="flex-grow-1 d-flex align-items-center">
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Rectangle" Width="2px" Height="35px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="header-button"/>
+                <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" CssClass="me-1"/>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex w-100 vh-100 overflow-hidden">
+        <div class="flex-grow-0 navigation">
+            <div class="navigation">
+                <div><SfSkeleton Shape="SkeletonType.Rectangle" Width="100%" Height="48px" /></div>
+                <div class="mt-1 ms-3">
+                    <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" />
+                    <SfSkeleton Shape="SkeletonType.Rectangle" Width="60px" Height="22px" CssClass="ms-1" />
+                </div>
+                <div class="mt-1 ms-3">
+                    <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" />
+                    <SfSkeleton Shape="SkeletonType.Rectangle" Width="100px" Height="22px" CssClass="ms-1" />
+                </div>
+                <div class="mt-1 ms-3">
+                    <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" />
+                    <SfSkeleton Shape="SkeletonType.Rectangle" Width="75px" Height="22px" CssClass="ms-1" />
+                </div>
+                <div class="mt-1 ms-3">
+                    <SfSkeleton Shape="SkeletonType.Circle" Width="22px" Height="22px" />
+                    <SfSkeleton Shape="SkeletonType.Rectangle" Width="85px" Height="22px" CssClass="ms-1" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-0 w-100">
+            <div class="page-header__container">
+                <div class="d-flex justify-content-between">
+                    <div><SfSkeleton Shape="SkeletonType.Rectangle" Width="70px" Height="33px" CssClass="ms-4" /></div>
+                    <div class="me-4">
+                        <SfSkeleton Shape="SkeletonType.Rectangle" Width="252px" Height="15px" />
+                        <SfSkeleton Shape="SkeletonType.Rectangle" Width="30px" Height="15px" />
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div>
+                    <div class="col task-approval mt-4">
+                        <div class="shortcut-group__header">
+                            <SfSkeleton Shape="SkeletonType.Rectangle" Width="300px" Height="33px" />
+                        </div>
+                    </div>
+                    <div class="shortcuts-instruction-container">
+                        <div><SfSkeleton Shape="SkeletonType.Rectangle" Width="350px" Height="44px" /></div>
+                        <div>
+                            <ul>
+                                <li><SfSkeleton Shape="SkeletonType.Rectangle" Width="350px" Height="24px" /></li>
+                                <li><SfSkeleton Shape="SkeletonType.Rectangle" Width="650px" Height="24px" /></li>
+                                <li><SfSkeleton Shape="SkeletonType.Rectangle" Width="450px" Height="24px" /></li>
+                                <li><SfSkeleton Shape="SkeletonType.Rectangle" Width="500px" Height="24px" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

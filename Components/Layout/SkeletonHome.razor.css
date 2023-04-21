@@ -1,0 +1,45 @@
+﻿::deep .header {
+    background: rgb(29, 52, 85);
+    height: 56px;
+}
+
+::deep .navigation {
+    border-right-color: #4a4a6b ;
+    border-right-color: rgba(74, 74, 107, 0.12) ;
+    border-right-style: solid;
+    border-right-width: 1px;
+    width: 260px;
+}
+
+::deep .header-button {
+    margin-right: 26px;
+}
+
+::deep .page-header__container {
+    display: flex;
+    flex-direction: column;
+    max-height: 5.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+::deep .task-approval {
+    margin-left: 62px;
+    margin-right: 40px;
+}
+
+::deep .shortcut-group__header {
+    margin-bottom: 20px;
+}
+
+::deep .shortcuts-instruction-container {
+    padding: 0.75rem 1.25rem 0;
+    margin-left: 30px;
+}
+
+    ::deep .shortcuts-instruction-container ul { margin-top: 3.56rem; }
+
+::deep li {
+    list-style-type: none;
+    margin-bottom: 38px;
+}

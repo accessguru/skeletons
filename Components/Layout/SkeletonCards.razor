@@ -1,0 +1,16 @@
+﻿@using Syncfusion.Blazor.Notifications
+
+@inherits SkeletonCardComponentLayoutBase
+@{
+    if (IsBusy)
+    {
+        <div class="d-flex flex-wrap flex-row gap-4">
+            @{
+                for (byte x = 1; x <= NumberOfCards; x++)
+                {
+                    <SkeletonCard/>
+                }
+            }
+        </div>
+    }
+}
