@@ -1,0 +1,14 @@
+﻿@page "/example"
+
+<div class="m-3">
+    <div class="mb-2">
+        <SfButton @onclick="Refresh" Content="Refresh"/>
+    </div>
+    <GridComponent EnableSkeleton="true" @ref="GridComponent"/>
+</div>
+
+@code {
+    private GridComponent GridComponent { get; set; }
+
+    private async Task Refresh() => await GridComponent.LoadData();
+}

@@ -8,7 +8,8 @@
     border-right-color: rgba(74, 74, 107, 0.12) ;
     border-right-style: solid;
     border-right-width: 1px;
-    width: 260px;
+    -ms-flex: 0 0 260px;
+    flex: 0 0 260px;
 }
 
 ::deep .header-button {
