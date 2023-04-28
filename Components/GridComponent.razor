@@ -2,6 +2,7 @@
 @implements ISkeleton
 @using Syncfusion.Blazor.Grids
 @using Syncfusion.Blazor.Spinner
+@using Skeleton
 
 @if (IsLoading && EnableSkeleton)
 {
@@ -24,16 +25,8 @@ else
 }
 
 @code {
+
     private int incValue = 0;
-    public class OrdersDetails
-    {
-        public int OrderID { get; set; }
-        public int CustomerID { get; set; }
-        public DateTime OrderDate { get; set; }
-        public double Freight { get; set; }
-        public DateTime ShippedDate { get; set; }
-        public string ShipCity { get; set; }
-    }
 
     public bool IsLoading { get; set; }
 
@@ -43,7 +36,6 @@ else
     public bool EnableSkeleton { get; set; }
 
     public List<OrdersDetails> GridData { get; set; }
-
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -64,7 +56,7 @@ else
         var data = new List<OrdersDetails>();
 
         incValue++;
-        for (int x = incValue; x < 100; x++)
+        for (var x = incValue; x <= 100; x++)
         {
             data.Add(new OrdersDetails
             {
@@ -77,7 +69,7 @@ else
             });
         }
 
-        this.GridData = data;
+        GridData = data;
         IsBusy = false;
         IsLoading = false;
         StateHasChanged();
