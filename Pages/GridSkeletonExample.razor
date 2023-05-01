@@ -1,14 +1,56 @@
 ﻿@page "/example"
+@inherits LayoutComponentBase
+@implements ISkeleton
 
 <div class="m-3">
     <div class="mb-2">
-        <SfButton @onclick="Refresh" Content="Refresh"/>
+        <SfButton @onclick="LoadDataAsync" Content="Refresh"/>
     </div>
-    <GridComponent EnableSkeleton="true" @ref="GridComponent"/>
+    <CascadingValue Value="IsLoading">
+        <GridComponent GridData="GridData" />
+    </CascadingValue>
 </div>
 
 @code {
-    private GridComponent GridComponent { get; set; }
+    private int incValue = 1;
 
-    private async Task Refresh() => await GridComponent.LoadData();
+    public bool IsLoading { get; set; }
+
+    public List<OrdersDetails> GridData { get; set; } = new();
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            IsLoading = true;
+            await LoadDataAsync();
+        }
+    }
+
+    public async Task LoadDataAsync()
+    {
+        StateHasChanged();
+        await Task.Delay(1000);
+
+        var data = new List<OrdersDetails>();
+
+        for (var x = incValue; x <= 100; x++)
+        {
+            data.Add(new OrdersDetails
+            {
+                OrderID = x,
+                CustomerID = x + 1,
+                Freight = x * 200 / .7,
+                OrderDate = DateTime.Today,
+                ShipCity = "Arcadia",
+                ShippedDate = DateTime.Today.AddDays(x)
+            });
+        }
+
+        incValue++;
+        GridData = data;
+        IsLoading = false;
+        StateHasChanged();
+    }
 }

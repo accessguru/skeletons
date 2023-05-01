@@ -4,7 +4,7 @@
 @using Syncfusion.Blazor.Spinner
 @using Skeleton
 
-@if (IsLoading && EnableSkeleton)
+@if (IsLoading)
 {
     <SkeletonGrid Height="500px"  />
 }
@@ -20,58 +20,14 @@ else
             <GridColumn Field=@nameof(OrdersDetails.ShippedDate) HeaderText="Shipped Date" Format="d" TextAlign="TextAlign.Right" Width="150"></GridColumn>
             <GridColumn Field=@nameof(OrdersDetails.ShipCity) HeaderText="Ship City" Width="150"></GridColumn>
         </GridColumns>
-        <SfSpinner @bind-Visible="@IsBusy" Type="SpinnerType.Bootstrap5" Size="50" />
     </SfGrid>
 }
 
 @code {
 
-    private int incValue = 0;
-
+    [CascadingParameter]
     public bool IsLoading { get; set; }
 
-    public bool IsBusy { get; set; }
-
     [Parameter]
-    public bool EnableSkeleton { get; set; }
-
     public List<OrdersDetails> GridData { get; set; }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        await base.OnAfterRenderAsync(firstRender);
-        if (firstRender)
-        {
-            IsLoading = true;
-            await LoadData();
-        }
-    }
-
-    public async Task LoadData()
-    {
-        IsBusy = true;
-        StateHasChanged();
-        await Task.Delay(3000);
-
-        var data = new List<OrdersDetails>();
-
-        incValue++;
-        for (var x = incValue; x <= 100; x++)
-        {
-            data.Add(new OrdersDetails
-            {
-                OrderID = x,
-                CustomerID = x + 1,
-                Freight = x * 200 / .7,
-                OrderDate = DateTime.Today,
-                ShipCity = "Arcadia",
-                ShippedDate = DateTime.Today.AddDays(x)
-            });
-        }
-
-        GridData = data;
-        IsBusy = false;
-        IsLoading = false;
-        StateHasChanged();
-    }
 }
